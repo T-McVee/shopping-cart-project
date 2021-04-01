@@ -100,6 +100,22 @@ nav .nav-links li .link {
   margin: 0 2rem;
   text-decoration: none;
 }
+nav .cart-icon {
+  position: relative;
+  z-index: 10;
+}
+nav .cart-icon .circle {
+  position: absolute;
+  z-index: -1;
+  top: -50%;
+  left: 100%;
+  background-color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  line-height: 1.8rem;
+  text-align: center;
+}
 
 .page {
   width: 100%;

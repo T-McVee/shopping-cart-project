@@ -34,7 +34,7 @@ function App() {
     <Router>
       <Switch>
         <div className="App">
-          <Nav />
+          <Nav cart={cart}/>
           <Route path="/" exact>
             <Home />
           </Route>

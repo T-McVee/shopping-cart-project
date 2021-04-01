@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { CartIcon } from './CartIcon';
 
-export const Nav = () => {
+
+export const Nav = props => {
+  const { cart } = props;
+
   return (
     <nav>
       <div className="logo">
@@ -19,8 +22,8 @@ export const Nav = () => {
           </Link>  
         </li>
         <li>
-          <Link to="/cart" className="link">
-            <FontAwesomeIcon icon={faShoppingCart} />
+          <Link to="/cart" className="link cart-icon">
+            <CartIcon cart={cart}/>
           </Link>
         </li>
         <li className="link">

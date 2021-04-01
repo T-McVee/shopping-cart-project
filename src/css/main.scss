@@ -41,6 +41,23 @@ nav {
       }
     }
   }
+
+  .cart-icon {
+    position: relative;
+    z-index: 10;
+    .circle {
+      position: absolute;
+      z-index: -1;
+      top: -50%;
+      left: 100%;
+      background-color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      line-height: 1.8rem;
+      text-align: center;
+    }
+  }
 }
 
 .page {
