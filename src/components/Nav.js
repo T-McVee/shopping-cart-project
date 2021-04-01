@@ -6,7 +6,7 @@ import { CartIcon } from './CartIcon';
 
 
 export const Nav = props => {
-  const { cart } = props;
+  const { cartCount } = props;
 
   return (
     <nav>
@@ -23,7 +23,7 @@ export const Nav = props => {
         </li>
         <li>
           <Link to="/cart" className="link cart-icon">
-            <CartIcon cart={cart}/>
+            <CartIcon cartCount={cartCount}/>
           </Link>
         </li>
         <li className="link">

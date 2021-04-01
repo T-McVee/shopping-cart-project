@@ -8,11 +8,14 @@ import { Shop } from './Shop';
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
   const [products, setProducts] = useState([])
 
   useEffect(() => {
     getProducts();
   }, []);
+
+ 
 
   const getProducts = async () => {
     const data = await fetch('https://fakestoreapi.com/products');
@@ -21,9 +24,17 @@ function App() {
     console.log(products);
   }
 
-  // addToCart()
+  const addToCart = (product) => {
+    const newCart = cart
+    newCart.push(product)
+    setCart(newCart)
+    setCartCount(cart.length)
+    console.log(cart.length);
+  }
 
-  // removeFromCart()
+  const removeFromCart = () => {
+    // remove specified item from cart array
+  }
   
   // numberOfItemsInCart()
   
@@ -34,12 +45,12 @@ function App() {
     <Router>
       <Switch>
         <div className="App">
-          <Nav cart={cart}/>
+          <Nav cartCount={cartCount}/>
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/shop">
-            <Shop products={products} />
+            <Shop products={products} addToCart={addToCart} />
           </Route>
         </div>
       </Switch>

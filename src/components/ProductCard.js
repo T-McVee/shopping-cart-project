@@ -1,10 +1,10 @@
 import React from 'react'
 
 export const ProductCard = props => {
-  const { product } = props;
+  const { product, addToCart } = props;
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => addToCart(product)}>
       <div className="card-img">
         <img src={product.image} alt={product.description}/>
       </div>
