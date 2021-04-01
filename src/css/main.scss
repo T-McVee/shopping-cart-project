@@ -1,3 +1,66 @@
+@import 'config';
+@import 'home';
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  padding: 0 5rem;
+
+  .logo {
+    .link {
+      text-decoration: none;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .link {
+      padding: 0 2rem;
+      text-decoration: none;
+
+      li {
+        list-style: none;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.page {
+  width: 100%;
+  padding: 0 5rem;
+}
+
+.btn {
+  width: fit-content;
+  background-color: rgb(237, 197, 127);
+  color: #fff;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 0.75rem 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.link {
+  text-decoration: none;
 }
