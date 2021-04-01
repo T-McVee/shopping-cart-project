@@ -50,12 +50,12 @@ nav .nav-links {
   justify-content: space-between;
   align-items: center;
 }
-nav .nav-links .link {
-  padding: 0 2rem;
+nav .nav-links li {
+  list-style: none;
   text-decoration: none;
 }
-nav .nav-links .link li {
-  list-style: none;
+nav .nav-links li .link {
+  margin: 0 2rem;
   text-decoration: none;
 }
 
@@ -79,6 +79,7 @@ nav .nav-links .link li {
 
 .link {
   text-decoration: none;
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */
