@@ -63,6 +63,7 @@
   .buttons {
     position: absolute;
     top: 85%;
+    right: 1rem;
     display: none;
     //display: flex;
     flex-direction: row;
@@ -80,6 +81,10 @@
         text-align: center;
         color: $peach-darker-color;
         line-height: 2rem;
+
+        &:hover {
+          cursor: pointer;
+        }
 
         &.left {
           border-top-left-radius: $radius-sm;

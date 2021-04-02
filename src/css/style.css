@@ -81,6 +81,7 @@ Link {
 .shop-product-card .buttons {
   position: absolute;
   top: 85%;
+  right: 1rem;
   display: none;
   flex-direction: row;
   justify-content: flex-end;
@@ -98,6 +99,9 @@ Link {
   text-align: center;
   color: #edbd6c;
   line-height: 2rem;
+}
+.shop-product-card .buttons .product-qty .qty-btn:hover {
+  cursor: pointer;
 }
 .shop-product-card .buttons .product-qty .qty-btn.left {
   border-top-left-radius: 5px;

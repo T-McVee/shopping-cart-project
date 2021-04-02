@@ -10,7 +10,7 @@ export const Home = () => {
       <section className="splash">
         <div className="splash-text">
           <h1>Catchy headline</h1>
-          <span>Persausive text to spike your interest</span>
+          <span>Intriguing text to spike your interest</span>
           <Link to="/shop" className="link">
           <div className="btn">Consume</div>
           </Link>
