@@ -4,6 +4,7 @@ import './css/style.css';
 import { Nav } from './components/Nav';
 import { Home } from './Home';
 import { Shop } from './Shop';
+import { Cart } from './Cart';
 
 function App() {
 
@@ -16,7 +17,6 @@ function App() {
   }, []);
 
  
-
   const getProducts = async () => {
     const data = await fetch('https://fakestoreapi.com/products');
     const products = await data.json();
@@ -32,8 +32,13 @@ function App() {
     console.log(cart.length);
   }
 
-  const removeFromCart = () => {
-    // remove specified item from cart array
+  const removeFromCart = (product) => {
+    const newCart = cart;
+    const itemToRemove = newCart.findIndex(item => item.id === product.id);
+    newCart.splice(itemToRemove, 1)
+    setCart(newCart)
+    setCartCount(cart.length)
+    console.log(newCart);
   }
   
   // numberOfItemsInCart()
@@ -51,6 +56,9 @@ function App() {
           </Route>
           <Route path="/shop">
             <Shop products={products} addToCart={addToCart} />
+          </Route>
+          <Route path="/cart">
+            <Cart cart={cart} removeFromCart={removeFromCart}/>
           </Route>
         </div>
       </Switch>

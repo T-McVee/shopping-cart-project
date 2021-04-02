@@ -28,7 +28,6 @@ Link {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  border: 2px solid black;
 }
 
 .product-card {
