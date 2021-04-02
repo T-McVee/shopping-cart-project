@@ -46,16 +46,14 @@ function App() {
   
   
   const cartTotal = () => {
-    /* const cartTotalValue = cart.reduce((total, current) => {
-      console.log('total:', total)
-      console.log('current:', current)
-      return total.price + current.price;
-    }); */
+    const itemValues = cart.map(item => item.price);
+    let cartTotalValue = 0;
 
-    const cartValues = cart.map(item => item.price);
-    const cartTotalValue = cartValues.reduce((total, current) => {
-      return total + current
-    });
+    if (itemValues > 0.01) {
+      cartTotalValue = itemValues.reduce((total, current) => {
+        return total + current
+      }).toFixed(2);
+    }
 
     setCartValue(cartTotalValue)
     console.log(cartTotalValue)
