@@ -10,7 +10,8 @@ function App() {
 
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
-  const [products, setProducts] = useState([])
+  const [cartValue, setCartValue] = useState(0);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts();
@@ -29,6 +30,7 @@ function App() {
     newCart.push(product)
     setCart(newCart)
     setCartCount(cart.length)
+    cartTotal()
     console.log(cart.length);
   }
 
@@ -38,12 +40,26 @@ function App() {
     newCart.splice(itemToRemove, 1)
     setCart(newCart)
     setCartCount(cart.length)
+    cartTotal();
     console.log(newCart);
   }
   
-  // numberOfItemsInCart()
   
-  // totalCart()
+  const cartTotal = () => {
+    /* const cartTotalValue = cart.reduce((total, current) => {
+      console.log('total:', total)
+      console.log('current:', current)
+      return total.price + current.price;
+    }); */
+
+    const cartValues = cart.map(item => item.price);
+    const cartTotalValue = cartValues.reduce((total, current) => {
+      return total + current
+    });
+
+    setCartValue(cartTotalValue)
+    console.log(cartTotalValue)
+  }
 
 
   return (
@@ -58,7 +74,7 @@ function App() {
             <Shop products={products} addToCart={addToCart} />
           </Route>
           <Route path="/cart">
-            <Cart cart={cart} removeFromCart={removeFromCart}/>
+            <Cart cart={cart} removeFromCart={removeFromCart} cartValue={cartValue}/>
           </Route>
         </div>
       </Switch>
