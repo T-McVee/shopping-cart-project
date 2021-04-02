@@ -30,13 +30,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 30%;
 
     li {
       list-style: none;
       text-decoration: none;
 
       .link {
-        margin: 0 2rem;
+        //margin: 0 2rem;
         text-decoration: none;
       }
     }
@@ -45,6 +46,7 @@ nav {
   .cart-icon {
     position: relative;
     z-index: 10;
+    font-size: 1.1rem;
     .circle {
       position: absolute;
       z-index: -1;
@@ -67,12 +69,12 @@ nav {
 
 .btn {
   width: fit-content;
-  background-color: rgb(237, 197, 127);
+  background-color: $peach-color;
   color: #fff;
-  border-radius: 5px;
+  border-radius: $radius-sm;
   padding: 1rem 2rem;
   margin: 0.75rem 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
+  box-shadow: $btn-shadow;
 
   &:hover {
     cursor: pointer;
@@ -82,4 +84,14 @@ nav {
 .link {
   text-decoration: none;
   list-style: none;
+}
+
+.icon {
+  font-size: 1.3rem;
+}
+
+.credit {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
 }

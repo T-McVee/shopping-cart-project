@@ -2,18 +2,25 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
+  column-gap: 50px;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   justify-self: center;
   margin: 1rem 0;
   border-radius: 1rem;
 
   &:hover {
     cursor: pointer;
+
+    .card-img {
+      img {
+        transform: scale(1.22);
+      }
+    }
   }
 
   .card-img {
@@ -28,6 +35,7 @@
     img {
       max-width: 100%;
       max-height: 120px;
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -40,6 +48,70 @@
     .product-price {
       font-size: 0.9rem;
       margin: 0.5rem 0;
+    }
+  }
+}
+
+.shop-product-card {
+  position: relative;
+  &:hover {
+    .buttons {
+      display: flex;
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    top: 85%;
+    display: none;
+    //display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    .product-qty {
+      display: flex;
+      flex-direction: row;
+      .qty-btn {
+        width: 22px;
+        height: 2rem;
+        background-color: $white;
+        text-align: center;
+        color: $peach-darker-color;
+        line-height: 2rem;
+
+        &.left {
+          border-top-left-radius: $radius-sm;
+          border-bottom-left-radius: $radius-sm;
+        }
+
+        &.right {
+          border-top-right-radius: $radius-sm;
+          border-bottom-right-radius: $radius-sm;
+        }
+      }
+
+      .qty-input {
+        border: none;
+        color: $peach-darker-color;
+        text-align: center;
+        width: 50px;
+        height: 2rem;
+      }
+    }
+
+    .add-to-cart-btn {
+      background-color: $peach-color;
+      color: $white;
+      padding: 0.5rem 1rem;
+      border-radius: $radius-sm;
+      box-shadow: $btn-shadow;
+      margin-left: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

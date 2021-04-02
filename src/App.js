@@ -22,26 +22,28 @@ function App() {
     const data = await fetch('https://fakestoreapi.com/products');
     const products = await data.json();
     setProducts(products);
-    console.log(products);
   }
 
-  const addToCart = (product) => {
+  const addToCart = (product, qty) => {
     const newCart = cart
-    newCart.push(product)
+    
+    for (let i = 0; i < qty; i++) {
+      newCart.push(product)
+    }
+    
     setCart(newCart)
     setCartCount(cart.length)
     cartTotal()
-    console.log(cart.length);
   }
 
   const removeFromCart = (product) => {
     const newCart = cart;
     const itemToRemove = newCart.findIndex(item => item.id === product.id);
     newCart.splice(itemToRemove, 1)
+    
     setCart(newCart)
     setCartCount(cart.length)
     cartTotal();
-    console.log(newCart);
   }
   
   
@@ -56,7 +58,6 @@ function App() {
     }
 
     setCartValue(cartTotalValue)
-    console.log(cartTotalValue)
   }
 
 

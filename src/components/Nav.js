@@ -28,7 +28,7 @@ export const Nav = props => {
         </li>
         <li className="link">
           <a className="link" href="https://github.com/T-McVee/shopping-cart-project" target="blank">
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub} className="icon"/>
           </a>
         </li>
       </ul>

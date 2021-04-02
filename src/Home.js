@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 export const Home = () => {
@@ -14,7 +16,9 @@ export const Home = () => {
           </Link>
         </div>
       </section>
-
+      <a className="credit link" href="https://github.com/T-McVee/shopping-cart-project" target="blank">
+        <FontAwesomeIcon icon={faGithub} className="icon git"/>
+      </a>
     </div>
   )
 }

@@ -3,13 +3,23 @@ import { ProductCard } from './ProductCard';
 
 export const ShopProductCard = props => {
   const { product, addToCart } = props;
+  
 
   return (
-    <div className="cart-product-card" onClick={() => addToCart(product)}>
+    <>
+    <div className="shop-product-card">
       <ProductCard product={product}/>
-      <div className="modify-btns">
-        <div className="remove-item">x</div>
+      <div className="buttons">
+        <div className="product-qty">
+          <div className="qty-btn left">-</div>
+          <input type="number" name="qty" id="productQty" className="qty-input" value="1"/>
+          <div className="qty-btn right">+</div>
+        </div>
+        <div className="add-to-cart-btn" onClick={() => addToCart(product, 1)}>
+          Gimmie!
+        </div>
       </div>
     </div>
+    </>
   )
 }
