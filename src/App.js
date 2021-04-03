@@ -52,12 +52,10 @@ function App() {
     const itemValues = cart.map(item => item.price);
     let cartTotalValue = 0;
 
-    if (itemValues > 0.01) {
-      cartTotalValue = itemValues.reduce((total, current) => {
-        return total + current
-      }).toFixed(2);
-    }
-
+    cartTotalValue = itemValues.reduce((total, current) => {
+      return total + current
+    }, 0).toFixed(2);
+    
     setCartValue(cartTotalValue)
   }
 

@@ -10,7 +10,7 @@ export const ProductCard = props => {
       </div>
       <div className="card-text">
         <div className="product-title">{product.title}</div>
-        <div className="product-price">${product.price}</div>
+        <div className="product-price">${product.price.toFixed(2)}</div>
       </div>
     </div>
   )

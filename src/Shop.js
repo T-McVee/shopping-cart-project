@@ -5,16 +5,12 @@ import { ShopProductCard } from './components/ShopProductCard';
 export const Shop = props => {
   const {products, addToCart} = props;
   
-  const [category, setCategory] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   const filterProducts = (x) => {
-    // only display products from selected category
-    
       const filteredProducts = products.filter(prod => prod.category === x)
       setFilteredProducts(filteredProducts);
     
-
     return '';
   }
 
