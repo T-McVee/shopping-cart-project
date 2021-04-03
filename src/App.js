@@ -28,12 +28,26 @@ function App() {
   const addToCart = (product, qty) => {
     const newCart = cart
     
-    for (let i = 0; i < qty; i++) {
-      newCart.push(product)
+    // check if product is already in cart
+    const itemIndex = newCart.findIndex(item => item.product === product)
+    console.log('itemIndex:', itemIndex)
+
+    // if no - create object containing props for product and qty
+    if (itemIndex < 0) {
+      newCart.push({
+        product: product,
+        qty: qty,
+        value: product.price * qty,
+      })
+
+    } else {
+      // if yes - update qty
+      newCart[itemIndex].qty += qty;
+      newCart[itemIndex].value = product.price * newCart[itemIndex].qty;
     }
     
     setCart(newCart)
-    setCartCount(cart.length)
+    cartItemCount();
     cartTotal()
   }
 
@@ -42,20 +56,28 @@ function App() {
     const itemToRemove = newCart.findIndex(item => item.id === product.id);
     newCart.splice(itemToRemove, 1)
     
-    setCart(newCart)
-    setCartCount(cart.length)
+    setCart(newCart);
+    cartItemCount();
     cartTotal();
   }
   
+  const cartItemCount = () => {
+    const numberOfItems = cart.reduce((total, item) => {
+      return total + item.qty
+    }, 0)
+
+    setCartCount(numberOfItems);
+  }
   
   const cartTotal = () => {
-    const itemValues = cart.map(item => item.price);
-    let cartTotalValue = 0;
+    /* const itemValues = cart.map(item => item.value);
+    let cartTotalValue = 0; */
 
-    cartTotalValue = itemValues.reduce((total, current) => {
-      return total + current
+    const cartTotalValue = cart.reduce((total, item) => {
+      return total + item.value
     }, 0).toFixed(2);
     
+    console.log('cart value:', cartTotalValue)
     setCartValue(cartTotalValue)
   }
 
