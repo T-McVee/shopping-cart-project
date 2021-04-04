@@ -53,7 +53,7 @@ function App() {
 
   const removeFromCart = (product) => {
     const newCart = cart;
-    const itemToRemove = newCart.findIndex(item => item.id === product.id);
+    const itemToRemove = newCart.findIndex(item => item.product.id === product.id);
     newCart.splice(itemToRemove, 1)
     
     setCart(newCart);
