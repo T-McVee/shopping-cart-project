@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
 import uuid from 'react-uuid';
-import { CartProductCard } from './components/CartProductCard';
 import { ProductCard } from './components/productCard/ProductCard';
 import { ProductCardAttributes } from './components/productCard/ProductCardAttributes';
 import { ProductCardButtons } from './components/productCard/ProductCardButtons';
