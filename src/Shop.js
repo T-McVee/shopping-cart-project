@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
-/* import { ShopProductCard } from './components/ShopProductCard'; */
 import { ProductCard } from './components/productCard/ProductCard';
 import { ProductCardAttributes } from './components/productCard/ProductCardAttributes';
 import { ProductCardButtons } from './components/productCard/ProductCardButtons';
+import { Button } from './components/Button';
 
 export const Shop = props => {
   const {products, addToCart} = props;
@@ -49,15 +49,30 @@ export const Shop = props => {
           <ProductCardButtons>
             <div className="product-qty">
               <div className="qty-btn left" onClick={() => decreaseQty()}>-</div>
-              <input type="number" name="qty" id="productQty" className="qty-input" value={qty} onChange={e => setQty(e.target.value)}/>
+              <input 
+                type="number" 
+                name="qty" 
+                id="productQty" 
+                className="qty-input" 
+                value={qty} 
+                onChange={e => setQty(parseInt(e.target.value))}
+              />
               <div className="qty-btn right" onClick={() => increaseQty()}>+</div>
             </div>
-            <div className="add-to-cart-btn" onClick={() => addToCart(prod, qty)}>
-              Gimmie!
-            </div>
+              <Button 
+                classNameArr={["add-to-cart-btn"]}
+                handleClick={addToCart}
+                handleClickArgs={[prod, qty]}
+                annimactionClass="fade"
+              >
+                Gimmie!
+              </Button>
           </ProductCardButtons>
         </ProductCard>
         ))}
+      </section>
+      <section>
+       
       </section>
     </div>
   )

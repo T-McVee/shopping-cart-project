@@ -26,6 +26,9 @@ function App() {
   }
 
   const addToCart = (product, qty) => {
+    console.log('product', product);
+    console.log('qty', qty);
+    
     const newCart = cart
     
     // check if product is already in cart
