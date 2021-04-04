@@ -31,14 +31,15 @@ Link {
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 50px;
+  row-gap: 2rem;
 }
 
 .product-card {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   justify-self: center;
-  margin: 1rem 0;
   border-radius: 1rem;
 }
 .product-card:hover {
@@ -46,6 +47,9 @@ Link {
 }
 .product-card:hover .card-img img {
   transform: scale(1.22);
+}
+.product-card:hover .card-details .buttons {
+  display: flex;
 }
 .product-card .card-img {
   display: flex;
@@ -61,24 +65,17 @@ Link {
   max-height: 120px;
   transition: transform 0.3s ease-in-out;
 }
-.product-card .card-text {
+.product-card .card-details {
   padding: 1rem;
 }
-.product-card .card-text .product-title {
+.product-card .card-details .product-attributes .product-title {
   font-size: 1rem;
 }
-.product-card .card-text .product-price {
+.product-card .card-details .product-attributes .product-price {
   font-size: 0.9rem;
   margin: 0.5rem 0;
 }
-
-.shop-product-card {
-  position: relative;
-}
-.shop-product-card:hover .buttons {
-  display: flex;
-}
-.shop-product-card .buttons {
+.product-card .card-details .buttons {
   position: absolute;
   top: 85%;
   right: 1rem;
@@ -88,11 +85,11 @@ Link {
   align-items: center;
   width: 100%;
 }
-.shop-product-card .buttons .product-qty {
+.product-card .card-details .buttons .product-qty {
   display: flex;
   flex-direction: row;
 }
-.shop-product-card .buttons .product-qty .qty-btn {
+.product-card .card-details .buttons .product-qty .qty-btn {
   width: 22px;
   height: 2rem;
   background-color: #fff;
@@ -100,25 +97,25 @@ Link {
   color: #edbd6c;
   line-height: 2rem;
 }
-.shop-product-card .buttons .product-qty .qty-btn:hover {
+.product-card .card-details .buttons .product-qty .qty-btn:hover {
   cursor: pointer;
 }
-.shop-product-card .buttons .product-qty .qty-btn.left {
+.product-card .card-details .buttons .product-qty .qty-btn.left {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.shop-product-card .buttons .product-qty .qty-btn.right {
+.product-card .card-details .buttons .product-qty .qty-btn.right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.shop-product-card .buttons .product-qty .qty-input {
+.product-card .card-details .buttons .product-qty .qty-input {
   border: none;
   color: #edbd6c;
   text-align: center;
   width: 50px;
   height: 2rem;
 }
-.shop-product-card .buttons .add-to-cart-btn {
+.product-card .card-details .buttons .add-to-cart-btn {
   background-color: #eec377;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -126,7 +123,7 @@ Link {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
   margin-left: 1rem;
 }
-.shop-product-card .buttons .add-to-cart-btn:hover {
+.product-card .card-details .buttons .add-to-cart-btn:hover {
   cursor: pointer;
 }
 
