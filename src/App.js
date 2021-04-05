@@ -26,15 +26,11 @@ function App() {
   }
 
   const addToCart = (product, qty) => {
-    console.log('product', product);
-    console.log('qty', qty);
-    
     const newCart = cart
     
     // check if product is already in cart
-    const itemIndex = newCart.findIndex(item => item.product === product)
-    console.log('itemIndex:', itemIndex)
-
+    const itemIndex = newCart.findIndex(item => item.product.id === product.id)
+    
     // if no - create object containing props for product and qty
     if (itemIndex < 0) {
       newCart.push({
@@ -63,6 +59,22 @@ function App() {
     cartItemCount();
     cartTotal();
   }
+
+  const updateProductQty = (product, newQty) => {
+    const newCart = cart;
+    const itemIndex = newCart.findIndex(item => item.product.id === product.id)
+    
+    newCart[itemIndex].qty = newQty;
+    newCart[itemIndex].value = product.price * newCart[itemIndex].qty;
+
+    if (newCart[itemIndex].qty < 1) {
+      removeFromCart(product);
+    }
+
+    setCart(newCart);
+    cartItemCount();
+    cartTotal();
+  }
   
   const cartItemCount = () => {
     const numberOfItems = cart.reduce((total, item) => {
@@ -73,15 +85,11 @@ function App() {
   }
   
   const cartTotal = () => {
-    /* const itemValues = cart.map(item => item.value);
-    let cartTotalValue = 0; */
-
     const cartTotalValue = cart.reduce((total, item) => {
       return total + item.value
     }, 0).toFixed(2);
     
-    console.log('cart value:', cartTotalValue)
-    setCartValue(cartTotalValue)
+    setCartValue(cartTotalValue);
   }
 
 
@@ -97,7 +105,12 @@ function App() {
             <Shop products={products} addToCart={addToCart} />
           </Route>
           <Route path="/cart">
-            <Cart cart={cart} removeFromCart={removeFromCart} cartValue={cartValue}/>
+            <Cart
+              cart={cart} 
+              removeFromCart={removeFromCart} 
+              updateProductQty={updateProductQty}
+              cartValue={cartValue}
+            />
           </Route>
         </div>
       </Switch>

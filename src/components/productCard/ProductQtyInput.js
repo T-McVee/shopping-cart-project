@@ -2,28 +2,43 @@
 export const ProductQtyInput = (props) => {
   const {
     qty,
-    setQty,
+    updateQty,
+    product,
   } = props;
 
   const increaseQty = () => {
-    setQty(qty + 1);
+    console.log(product)
+    if (product) return updateQty(product, qty + 1);
+    
+    updateQty(qty + 1);
   }
 
   const decreaseQty = () => {
-    setQty(qty - 1);
+    if (product) return updateQty(product, qty -1);
+
+    updateQty(qty - 1);
   } 
+
+  const handleChange = (e) => {
+    if (product) {
+      console.log('Yea Buddy')
+      updateQty(product, parseInt(e.target.value))
+    } else {
+      updateQty(parseInt(e.target.value))
+    }
+  }
 
   return (
     <div className="product-qty">
       <div className="qty-btn left" onClick={() => decreaseQty()}>-</div>
-      <input 
+      {<input 
         type="number" 
         name="qty" 
         id="productQty" 
         className="qty-input" 
         value={qty} 
-        onChange={e => setQty(parseInt(e.target.value))}
-      />
+        onChange={e => handleChange(e)}
+      />}
       <div className="qty-btn right" onClick={() => increaseQty()}>+</div>
     </div>
   )

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { ProductQtyInput } from './ProductQtyInput';
 
 export const ProductCard = props => {
   const { product, children } = props;
+
+  const [qty, setQty] = useState(1);
 
   return (
     <div className="product-card">
@@ -10,6 +13,7 @@ export const ProductCard = props => {
       </div>
       <div className="card-details">
         {children}
+      <ProductQtyInput qty={1} setQty={setQty} />
       </div>
     </div>
   )

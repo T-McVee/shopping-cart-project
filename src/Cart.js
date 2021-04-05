@@ -1,12 +1,25 @@
 import uuid from 'react-uuid';
+import { CartProductCardV2 } from './components/productCard/CartProductCardV2';
 import { ProductCard } from './components/productCard/ProductCard';
 import { ProductCardAttributes } from './components/productCard/ProductCardAttributes';
 import { ProductCardButtons } from './components/productCard/ProductCardButtons';
+import { ProductQtyInput } from './components/productCard/ProductQtyInput';
 
 export const Cart = props => {
-  const { cart, cartValue, removeFromCart } = props;
+  const { 
+    cart, 
+    cartValue, 
+    removeFromCart, 
+    updateProductQty, 
+  } = props;
 
-  
+  const increaseQty = (itemQty) => {
+    
+  }
+
+  const decreaseQty = (e) => {
+
+  }
 
   return (
     <div className="page">
@@ -14,19 +27,12 @@ export const Cart = props => {
 
       <section className="cart-contentse">
         {cart.map(item => (
-          <ProductCard 
-            product={item.product} 
+          <CartProductCardV2 
+            product={item} 
             removeFromCart={removeFromCart} 
+            updateProductQty={updateProductQty}
             key={uuid()} 
-          >
-            <ProductCardAttributes>
-              <div className="cart-product-qty">{item.qty}</div> 
-              <div className="cart-product-value">${item.value}</div> 
-            </ProductCardAttributes>
-            <ProductCardButtons>
-            <div className="remove-item" onClick={() => removeFromCart(item.product)}>x</div>
-            </ProductCardButtons>
-          </ProductCard>
+          />
         ))}
       </section>
 

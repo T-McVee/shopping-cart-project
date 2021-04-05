@@ -68,10 +68,10 @@ Link {
 .product-card .card-details {
   padding: 1rem;
 }
-.product-card .card-details .product-attributes .product-title {
+.product-card .card-details .product-card-attributes .product-title {
   font-size: 1rem;
 }
-.product-card .card-details .product-attributes .product-price {
+.product-card .card-details .product-card-attributes .product-price {
   font-size: 0.9rem;
   margin: 0.5rem 0;
 }
