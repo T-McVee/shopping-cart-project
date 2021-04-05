@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ProductCardImage } from './ProductCardImage';
 import { ProductQtyInput } from './ProductQtyInput';
 import { Button } from '../Button';
 
@@ -9,9 +10,7 @@ export const StoreProductCard = (props) => {
 
   return (
     <div className="product-card">
-      <div className="card-img">
-        <img src={product.image} alt={product.description}/>
-      </div>
+      <ProductCardImage product={product}/>
       <div className="card-details">
         <div className="product-card-attributes">
           <div className="product-title">{product.title}</div>

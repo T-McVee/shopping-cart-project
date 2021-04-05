@@ -1,3 +1,4 @@
+import { ProductCardImage } from './ProductCardImage';
 import { ProductQtyInput } from './ProductQtyInput';
 
 export const CartProductCard = (props) => {
@@ -9,9 +10,7 @@ export const CartProductCard = (props) => {
   
   return (
     <div className="product-card">
-      <div className="card-img">
-        <img src={product.product.image} alt={product.description}/>
-      </div>
+      <ProductCardImage product={product.product}/>
       <div className="card-details">
         <div className="product-card-attributes">
           <div className="product-title">{product.product.title}</div>
