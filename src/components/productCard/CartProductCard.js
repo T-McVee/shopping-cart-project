@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { ProductQtyInput } from './ProductQtyInput';
-import { Button } from '../Button';
 
-export const CartProductCardV2 = (props) => {
+export const CartProductCard = (props) => {
   const {
     product,
     removeFromCart,
@@ -21,6 +19,12 @@ export const CartProductCardV2 = (props) => {
         </div>
         <div className="buttons">
           <ProductQtyInput qty={product.qty} updateQty={updateProductQty} product={product.product} />
+          <div 
+            className="removeFromCart" 
+            onClick={() => removeFromCart(product.product)}
+          >
+            x
+          </div>
         </div>
       </div>
     </div>

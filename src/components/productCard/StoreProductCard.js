@@ -2,22 +2,10 @@ import { useState } from 'react';
 import { ProductQtyInput } from './ProductQtyInput';
 import { Button } from '../Button';
 
-export const StoreProductCardV2 = (props) => {
+export const StoreProductCard = (props) => {
   const { product, addToCart, initialQty,  } = props;
 
   const [qty, setQty] = useState(initialQty);
-
-  const increaseQty = () => {
-    //if (product) return console.log(product.qty + 1);
-    
-    setQty(qty + 1);
-  }
-
-  const decreaseQty = () => {
-    //if (product) return console.log(product.qty - 1);
-
-    setQty(qty - 1);
-  } 
 
   return (
     <div className="product-card">

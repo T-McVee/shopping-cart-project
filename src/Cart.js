@@ -1,9 +1,5 @@
 import uuid from 'react-uuid';
-import { CartProductCardV2 } from './components/productCard/CartProductCardV2';
-import { ProductCard } from './components/productCard/ProductCard';
-import { ProductCardAttributes } from './components/productCard/ProductCardAttributes';
-import { ProductCardButtons } from './components/productCard/ProductCardButtons';
-import { ProductQtyInput } from './components/productCard/ProductQtyInput';
+import { CartProductCard } from './components/productCard/CartProductCard';
 
 export const Cart = props => {
   const { 
@@ -13,21 +9,13 @@ export const Cart = props => {
     updateProductQty, 
   } = props;
 
-  const increaseQty = (itemQty) => {
-    
-  }
-
-  const decreaseQty = (e) => {
-
-  }
-
   return (
     <div className="page">
       <h1>Your cart</h1>
 
       <section className="cart-contentse">
         {cart.map(item => (
-          <CartProductCardV2 
+          <CartProductCard 
             product={item} 
             removeFromCart={removeFromCart} 
             updateProductQty={updateProductQty}

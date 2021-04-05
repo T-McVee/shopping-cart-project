@@ -7,7 +7,6 @@ export const ProductQtyInput = (props) => {
   } = props;
 
   const increaseQty = () => {
-    console.log(product)
     if (product) return updateQty(product, qty + 1);
     
     updateQty(qty + 1);
@@ -21,7 +20,6 @@ export const ProductQtyInput = (props) => {
 
   const handleChange = (e) => {
     if (product) {
-      console.log('Yea Buddy')
       updateQty(product, parseInt(e.target.value))
     } else {
       updateQty(parseInt(e.target.value))

@@ -22,7 +22,6 @@ function App() {
     const data = await fetch('https://fakestoreapi.com/products');
     const products = await data.json();
     setProducts(products);
-    //console.log(products);
   }
 
   const addToCart = (product, qty) => {
