@@ -26,6 +26,33 @@ Link {
   letter-spacing: 1px;
 }
 
+.categories {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 1rem 0 5rem;
+}
+.categories .categories-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.categories .categories-list .category {
+  list-style: none;
+  background-color: white;
+  width: 160px;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  border-radius: 5px;
+  transition: box-shadow 0.4s;
+}
+.categories .categories-list .category:hover {
+  cursor: pointer;
+  box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.032);
+}
+
 .product-feed {
   display: grid;
   width: 100%;
@@ -40,13 +67,13 @@ Link {
   flex-direction: column;
   width: 100%;
   justify-self: center;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .product-card:hover {
   cursor: pointer;
 }
 .product-card:hover .card-img {
-  box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.057);
+  box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.032);
 }
 .product-card:hover .card-img img {
   transform: scale(1.22);
@@ -70,7 +97,7 @@ Link {
   transition: transform 0.3s ease-in-out;
 }
 .product-card .card-details {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .product-card .card-details .product-card-attributes .product-title {
   font-size: 1rem;
