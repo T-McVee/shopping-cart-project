@@ -1,4 +1,5 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import useDebounceEffect from '../helpers/useDebounceEffect'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -8,8 +9,36 @@ import { CartIcon } from './CartIcon';
 export const Nav = props => {
   const { cartCount } = props;
 
+  const [prevScrollPosition, setPrevScrollPosition] = useState(window.pageYOffset)
+  const [currentScrollPosition, setCurrentScrollPosition] = useState(window.pageYOffset)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+   window.addEventListener('scroll', handleScroll);
+   
+   return () => {
+     window.removeEventListener('scroll', handleScroll);
+   }
+  })
+
+  const handleScroll = () => {
+     setCurrentScrollPosition(window.pageYOffset);
+    if (prevScrollPosition >= currentScrollPosition) {
+      //setVisible(true)
+      setVisible(true)
+    } else {
+      //setVisible(false);
+      setVisible(false)
+    }
+
+    setPrevScrollPosition(currentScrollPosition);
+  };
+  
+  
+
+
   return (
-    <nav>
+    <nav className={visible ? "sticky-nav" : "sticky-nav hidden"}>
       <div className="logo">
         <Link to="/" className="link">
           <h3>Logo</h3>
