@@ -4,12 +4,12 @@ import { ProductQtyInput } from './ProductQtyInput';
 import { Button } from '../Button';
 
 export const StoreProductCard = (props) => {
-  const { product, position, addToCart, initialQty,  } = props;
+  const { product, cardStyle, addToCart, initialQty,  } = props;
 
   const [qty, setQty] = useState(initialQty);
 
   return (
-    <div className="product-card" style={position} >
+    <div className="product-card" style={cardStyle} >
       <ProductCardImage product={product}/>
       <div className="card-details">
         <div className="product-card-attributes">

@@ -18,8 +18,9 @@ export const Slider = props => {
     setSliderPosition(newPosition);
   }
 
-  const productCardPosition = {
+  const cardStyle = {
     right: `calc(${sliderPosition}vw)`,
+    width: `calc(${cardWidth}vw - 2vw)`,
   }
   
   return (
@@ -32,7 +33,7 @@ export const Slider = props => {
           key={uuid()} 
           addToCart={addToCart}
           initialQty={1}
-          position={productCardPosition}
+          cardStyle={cardStyle}
         />
         ))}
     </div>
