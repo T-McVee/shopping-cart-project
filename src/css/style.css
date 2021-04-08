@@ -81,10 +81,10 @@ Link {
   transition: transform 0.3s;
 }
 .arrow.arrow-left {
-  left: 0;
+  left: 0rem;
 }
 .arrow.arrow-right {
-  left: 78vw;
+  left: calc(100vw - 14rem);
 }
 .arrow:hover {
   cursor: pointer;
@@ -101,7 +101,7 @@ Link {
   width: 42vw;
   justify-self: center;
   border-radius: 0.5rem;
-  margin: 1rem 1rem 1rem 0;
+  margin: 1rem 2vw 1rem 0;
 }
 .product-card:hover {
   cursor: pointer;

@@ -6,20 +6,26 @@ export const Slider = props => {
   const { products, addToCart } = props;
 
   const [sliderPosition, setSliderPosition] = useState(0);
+  const [cardWidth, setCardWidth] = useState(44)
 
   const handleRightArrowClick = () => {
-    const newPosition = sliderPosition + 42;
+    const newPosition = sliderPosition + cardWidth;
     setSliderPosition(newPosition);
+  }
 
+  const handleLeftArrowClick = () => {
+    const newPosition = sliderPosition - cardWidth;
+    setSliderPosition(newPosition);
   }
 
   const productCardPosition = {
-    right: sliderPosition + 'vw',
+    right: `calc(${sliderPosition}vw)`,
   }
   
   return (
     <div className="product-slider">
-      <div className="arrow arrow-right" onClick={() => handleRightArrowClick()}>&gt;</div>
+      {sliderPosition > 0 && <div className="arrow arrow-left" onClick={() => handleLeftArrowClick()}>&lt;</div>}
+      {sliderPosition + (cardWidth * 3) <= cardWidth * products.length && <div className="arrow arrow-right" onClick={() => handleRightArrowClick()}>&gt;</div>}
         {products.map(prod => (
         <StoreProductCard
           product={prod} 
