@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import uuid from 'react-uuid';
-import { StoreProductCard } from './components/productCard/StoreProductCard';
+import { Slider } from './components/Slider'
+
 
 export const Shop = props => {
   const { products, addToCart } = props;
   
   const [category, setCategory] = useState('all')
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const [sliderPosition, setSliderPosition] = useState(0);
   
   const filterProducts = x => {
     const filteredProducts = products.filter(prod => prod.category === x)
@@ -18,18 +17,7 @@ export const Shop = props => {
     setFilteredProducts(products)
   }
 
-  const handleArrowClick = () => {
-    // update slider position 
-    const newPosition = sliderPosition + 42;
-    setSliderPosition(newPosition);
-
-    console.log(newPosition)
-  }
-
-  const productCardPosition = {
-    right: sliderPosition + 'vw',
-  }
-
+  
   return (
     <div id="shop" className="page page-shop">
       <h1>Buy things</h1>
@@ -44,17 +32,7 @@ export const Shop = props => {
       </section>
       <h2>{category}</h2>
       <section className="product-feed">
-      {/* / */}
-      <div className="arrow arrow-right" onClick={() => handleArrowClick()}>&gt;</div>
-        {filteredProducts.map(prod => (
-        <StoreProductCard
-          product={prod} 
-          key={uuid()} 
-          addToCart={addToCart}
-          initialQty={1}
-          position={productCardPosition}
-        />
-        ))}
+        <Slider products={filteredProducts} addToCart={addToCart}/>
       </section>
     </div>
   )

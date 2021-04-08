@@ -58,7 +58,7 @@ Link {
   box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.032);
 }
 
-.product-feed {
+.product-slider {
   position: relative;
   display: flex;
   flex-direction: row;
