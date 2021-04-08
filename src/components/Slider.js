@@ -8,6 +8,8 @@ export const Slider = props => {
   const [sliderPosition, setSliderPosition] = useState(0);
   const [cardWidth, setCardWidth] = useState(44)
 
+  
+
   const handleRightArrowClick = () => {
     const newPosition = sliderPosition + cardWidth;
     setSliderPosition(newPosition);
