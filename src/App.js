@@ -12,9 +12,11 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [cartValue, setCartValue] = useState(0);
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     getProducts();
+    getCategories();
   }, []);
 
  
@@ -22,6 +24,12 @@ function App() {
     const data = await fetch('https://fakestoreapi.com/products');
     const products = await data.json();
     setProducts(products);
+  }
+
+  const getCategories = async () => {
+    const data = await fetch('https://fakestoreapi.com/products/categories');
+    const categories = await data.json();
+    setCategories(categories);
   }
 
   const addToCart = (product, qty) => {
