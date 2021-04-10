@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import { animated } from 'react-spring'
 import { ProductCardImage } from './ProductCardImage';
 import { ProductQtyInput } from './ProductQtyInput';
 import { Button } from '../Button';
 
+
 export const StoreProductCard = (props) => {
-  const { product, cardStyle, addToCart, initialQty,  } = props;
+  const { product, cardStyles, addToCart, initialQty,  } = props;
 
   const [qty, setQty] = useState(initialQty);
 
   return (
-    <div className="product-card" style={cardStyle} >
+    <animated.div className="product-card" style={cardStyles} >
       <ProductCardImage product={product}/>
       <div className="card-details">
         <div className="product-card-attributes">
@@ -31,6 +33,6 @@ export const StoreProductCard = (props) => {
           </Button>
         </div>
       </div>
-    </div>
+    </animated.div>
   )
 }

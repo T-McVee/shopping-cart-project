@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Slider } from './components/Slider'
 
-
 export const Shop = props => {
   const { products, addToCart } = props;
   

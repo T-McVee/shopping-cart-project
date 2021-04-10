@@ -194,6 +194,12 @@ Link {
   cursor: pointer;
 }
 
+.test {
+  position: absolute;
+  left: 0;
+  color: red;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
