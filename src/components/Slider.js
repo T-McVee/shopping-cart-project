@@ -12,28 +12,26 @@ export const Slider = props => {
   const [showRightArrow, setShowRightArrow] = useState(true);
   
   const handleRightArrowClick = () => {
-    setIndex(index + 1)
-
-    if (index >= 0) {
-      setShowLeftArrow(true)
-    } 
-    
+    if (index <= products.length - 3) {
+      setIndex(index + 1)
+    }
     
     if (index === products.length - 3) {
       setShowRightArrow(false)
+    } else {
+      setShowLeftArrow(true)
     }
   }
 
   const handleLeftArrowClick = () => {
-    setIndex(index - 1)
+    if (index > 0) {
+      setIndex(index - 1)
+    }
 
-    if (index <= products.length - 2) {
-      setShowRightArrow(true)
-    } 
-
-    
     if (index - 1 === 0) {
       setShowLeftArrow(false)
+    } else {
+      setShowRightArrow(true)
     }
   }
 
@@ -42,18 +40,30 @@ export const Slider = props => {
   const cardStyles = useSpring({
     transform: `translateX(-${index * cardWidth}vw)`,
     width: `calc(${cardWidth}vw - 2vw)`,
+    config: {
+      mass: 10,
+      tension: 380,
+      friction: 120,
+      clamp: true
+    }
   })
 
   const transitionLeftArrow = useTransition(showLeftArrow, {
     from: {opacity: 0},
     enter: {opacity: 1},
     leave: {opacity: 0},
+    config: {
+      clamp: true,
+    }
   });
   
   const transitionRightArrow = useTransition(showRightArrow, {
     from: {opacity: 0},
     enter: {opacity: 1},
     leave: {opacity: 0},
+    config: {
+      clamp: true,
+    }
   });
 
   return (
