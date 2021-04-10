@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Slider } from './components/Slider'
+import { TestSpring } from './components/TestSpring'
 
 export const Shop = props => {
   const { products, addToCart } = props;
@@ -32,6 +33,9 @@ export const Shop = props => {
       <h2>{category}</h2>
       <section className="product-feed">
         <Slider products={filteredProducts} addToCart={addToCart}/>
+      </section>
+      <section>
+        <TestSpring />
       </section>
     </div>
   )
