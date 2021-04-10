@@ -17,6 +17,7 @@ export const Shop = props => {
     setFilteredProducts(products)
   }
 
+  console.log(products)
   
   return (
     <div id="shop" className="page page-shop">
@@ -30,10 +31,9 @@ export const Shop = props => {
           <li className="category" onClick={() => filterProducts('electronics')}>Electronics</li>
         </ul>
       </section>
-      <h2>{category}</h2>
       <section className="product-feed">
-        <Slider products={filteredProducts} addToCart={addToCart}/>
-        <Slider products={filteredProducts} addToCart={addToCart}/>
+        <Slider products={filteredProducts} category={category} addToCart={addToCart}/>
+        <Slider products={filteredProducts} category={category} addToCart={addToCart}/>
       </section>
     </div>
   )

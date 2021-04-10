@@ -5,7 +5,7 @@ import { StoreProductCard } from './productCard/StoreProductCard';
 import { SliderArrow } from './slider/SliderArrow'
 
 export const Slider = props => {
-  const { products, addToCart } = props;
+  const { products, category, addToCart } = props;
 
   const [cardWidth, setCardWidth] = useState(44);
   const [index, setIndex] = useState(0);
@@ -49,47 +49,33 @@ export const Slider = props => {
     }
   })
 
-  const transitionLeftArrow = useTransition(showLeftArrow, {
-    from: {opacity: 0},
-    enter: {opacity: 1},
-    leave: {opacity: 0},
-    config: {
-      clamp: true,
-    }
-  });
-  
-  const transitionRightArrow = useTransition(showRightArrow, {
-    from: {opacity: 0},
-    enter: {opacity: 1},
-    leave: {opacity: 0},
-    config: {
-      clamp: true,
-    }
-  });
 
   return (
-    <div className="product-slider">
-      
-      <SliderArrow 
-        show={showLeftArrow}
-        direction="<"
-        handleClick={handleLeftArrowClick}
-      />
-      <SliderArrow 
-        show={showRightArrow}
-        direction=">"
-        handleClick={handleRightArrowClick}
-      />
-
-        {products.map(prod => (
-        <AnimatedStoreProductCard
-          product={prod} 
-          key={uuid()} 
-          addToCart={addToCart}
-          initialQty={1}
-          cardStyles={cardStyles}
+    <div className="container">
+      <h2>{category}</h2>
+      <div className="product-slider">
+        <SliderArrow 
+          show={showLeftArrow}
+          direction="<"
+          handleClick={handleLeftArrowClick}
         />
-        ))}
+        <SliderArrow 
+          show={showRightArrow}
+          direction=">"
+          handleClick={handleRightArrowClick}
+        />
+
+          {products.map(prod => (
+          <AnimatedStoreProductCard
+            product={prod} 
+            key={uuid()} 
+            addToCart={addToCart}
+            initialQty={1}
+            cardStyles={cardStyles}
+          />
+          ))}
+      </div>
     </div>
+    
   )
 }

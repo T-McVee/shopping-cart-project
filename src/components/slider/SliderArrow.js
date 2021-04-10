@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 
 export const SliderArrow = props => {
@@ -12,7 +11,6 @@ export const SliderArrow = props => {
       clamp: true,
     }
   });
-
 
   return (
     <>
