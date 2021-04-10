@@ -33,9 +33,7 @@ export const Shop = props => {
       <h2>{category}</h2>
       <section className="product-feed">
         <Slider products={filteredProducts} addToCart={addToCart}/>
-      </section>
-      <section>
-        <TestSpring />
+        <Slider products={filteredProducts} addToCart={addToCart}/>
       </section>
     </div>
   )
