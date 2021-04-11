@@ -30,6 +30,13 @@ Link {
   overflow-x: hidden;
   width: 100vw;
 }
+.page-shop header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  text-align: center;
+}
 
 .categories {
   display: flex;

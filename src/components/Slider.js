@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSpring, useTransition, animated } from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 import uuid from 'react-uuid';
 import { StoreProductCard } from './productCard/StoreProductCard';
 import { SliderArrow } from './slider/SliderArrow'
@@ -49,33 +49,33 @@ export const Slider = props => {
     }
   })
 
-
   return (
-    <div className="container">
-      <h2>{category}</h2>
-      <div className="product-slider">
-        <SliderArrow 
-          show={showLeftArrow}
-          direction="<"
-          handleClick={handleLeftArrowClick}
-        />
-        <SliderArrow 
-          show={showRightArrow}
-          direction=">"
-          handleClick={handleRightArrowClick}
-        />
-
-          {products.map(prod => (
-          <AnimatedStoreProductCard
-            product={prod} 
-            key={uuid()} 
-            addToCart={addToCart}
-            initialQty={1}
-            cardStyles={cardStyles}
+    <>
+      <div className="container">
+        <h2>{category}</h2>
+        <div className="product-slider">
+          <SliderArrow 
+            show={showLeftArrow}
+            direction="<"
+            handleClick={handleLeftArrowClick}
           />
-          ))}
-      </div>
-    </div>
-    
+          <SliderArrow 
+            show={showRightArrow}
+            direction=">"
+            handleClick={handleRightArrowClick}
+          />
+
+            {products.map(prod => (
+            <AnimatedStoreProductCard
+              product={prod} 
+              key={uuid()} 
+              addToCart={addToCart}
+              initialQty={1}
+              cardStyles={cardStyles}
+            />
+            ))}
+        </div>
+      </div>  
+    </>
   )
 }
