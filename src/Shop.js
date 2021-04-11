@@ -9,6 +9,11 @@ export const Shop = props => {
   
   const [selectedCategory, setSelectedCategory] = useState([]);
 
+  useEffect(() => {
+    setSelectedCategory(categories);
+    
+  }, [categories])
+
   const filterCategories = (category) => {
     if (category !== 'all') {
       setSelectedCategory([category])
