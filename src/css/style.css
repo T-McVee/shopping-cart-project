@@ -75,6 +75,18 @@ Link {
   width: fit-content;
 }
 
+.slider-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.slider-title h2 {
+  font-size: 2rem;
+}
+.slider-title .slider-item-count {
+  margin-left: 0.5rem;
+}
+
 .arrow {
   position: absolute;
   z-index: 10;

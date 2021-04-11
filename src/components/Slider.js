@@ -52,7 +52,10 @@ export const Slider = props => {
   return (
     <>
       <div className="container">
+        <div className="slider-title">
         <h2>{category}</h2>
+        <span className="slider-item-count">{products.length} items</span>
+        </div> 
         <div className="product-slider">
           <SliderArrow 
             show={showLeftArrow}

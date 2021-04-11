@@ -51,6 +51,20 @@
   width: fit-content;
 }
 
+.slider-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .slider-item-count {
+    margin-left: 0.5rem;
+  }
+}
+
 .arrow {
   position: absolute;
   z-index: 10;
