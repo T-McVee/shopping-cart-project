@@ -24,12 +24,14 @@
     justify-content: space-between;
 
     .category {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       list-style: none;
       background-color: rgb(255, 255, 255);
       width: 13vw;
       height: 120px;
       text-align: center;
-      line-height: 120px;
       border-radius: $radius-sm;
       transition: box-shadow 0.4s;
 

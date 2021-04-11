@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
+import uuid from 'react-uuid';
 import { Slider } from './components/Slider';
 import { TestSpring } from './components/TestSpring';
 
 export const Shop = props => {
   const { products, categories, addToCart } = props;
   
-  const [selectedCategory, setSelectedCategory] = useState(categories);
-  
+  const [selectedCategory, setSelectedCategory] = useState([]);
+
   const filterCategories = (category) => {
     if (category !== 'all') {
       setSelectedCategory([category])
@@ -41,8 +42,9 @@ export const Shop = props => {
               <li 
                 className="category" 
                 onClick={() => filterCategories(cat)} key={cat}
+                key={uuid()}
               >
-                {getTitleFromList(categoryTitlesList, cat)}
+                <p>{getTitleFromList(categoryTitlesList, cat)}</p>
               </li>
             ))}
           </ul>
@@ -51,12 +53,18 @@ export const Shop = props => {
         <section className="product-feed">
           {selectedCategory.map(cat => (
             cat === 'all' ? 
-              <Slider products={products} category="All" addToCart={addToCart}/> 
+              <Slider 
+                products={products} 
+                category="All" 
+                addToCart={addToCart}
+                key={uuid()}
+              /> 
             :
               <Slider 
                 products={products.filter(prod => prod.category === cat)} 
                 category={getTitleFromList(categoryTitlesList, cat)} 
                 addToCart={addToCart}
+                key={uuid()}
               />
           ))}
         </section>

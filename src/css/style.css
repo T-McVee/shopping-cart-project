@@ -51,12 +51,14 @@ Link {
   justify-content: space-between;
 }
 .categories .categories-list .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
   background-color: white;
   width: 13vw;
   height: 120px;
   text-align: center;
-  line-height: 120px;
   border-radius: 5px;
   transition: box-shadow 0.4s;
 }
