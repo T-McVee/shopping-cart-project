@@ -3,38 +3,54 @@ import { Slider } from './components/Slider'
 import { TestSpring } from './components/TestSpring'
 
 export const Shop = props => {
-  const { products, addToCart } = props;
+  const { products, categories, addToCart } = props;
   
-  const [category, setCategory] = useState('all')
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [displayCategory, setDisplayCategory] = useState(categories);
   
-  const filterProducts = x => {
-    const filteredProducts = products.filter(prod => prod.category === x)
-    setFilteredProducts(filteredProducts);
+  const filterCategories = (category) => {
+    if (category !== 'all') {
+      setDisplayCategory([category])
+    } else {
+      setDisplayCategory(categories)
+    }
+  }
+  
+  const categoryTitlesList = [
+    {all: "All"},
+    {electronics: "Electronics"},
+    {jewelery: "Jewlery"},
+    {"men clothing": "Men's Clothing"},
+    {"women clothing": "Women's Clothing"},
+  ]
+  
+  const getTitleFromList = (list, key) => {
+    const item = list.find(item => item[key]);
+    return item[key];
   }
 
-  const resetFilter = () => {
-    setFilteredProducts(products)
-  }
-
-  console.log(products)
-  
   return (
     <div id="shop" className="page page-shop">
       <h1>Buy things</h1>
       <section className="categories">
         <ul className="categories-list">
-          <li className="category" onClick={() => resetFilter()}>All</li>
-          <li className="category" onClick={() => filterProducts('men clothing')}>Men's Clothing</li>
-          <li className="category" onClick={() => filterProducts('women clothing')}>Women's Clothing</li>
-          <li className="category" onClick={() => filterProducts('jewelery')}>Jewlery</li>
-          <li className="category" onClick={() => filterProducts('electronics')}>Electronics</li>
+          {categories.map(cat => (           
+            <li 
+              className="category" 
+              onClick={() => filterCategories(cat)} key={cat}
+            >
+              {getTitleFromList(categoryTitlesList, cat)}
+            </li>
+          ))}
         </ul>
       </section>
+
       <section className="product-feed">
-        <Slider products={filteredProducts} category={category} addToCart={addToCart}/>
-        <Slider products={filteredProducts} category={category} addToCart={addToCart}/>
+        {displayCategory.map(cat => (
+          cat === 'all' ? <Slider products={products} category="All" addToCart={addToCart}/> :
+          <Slider products={products.filter(prod => prod.category === cat)} category={getTitleFromList(categoryTitlesList, cat)} addToCart={addToCart}/>
+        ))}
       </section>
+
     </div>
   )
 }

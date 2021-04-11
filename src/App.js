@@ -29,6 +29,7 @@ function App() {
   const getCategories = async () => {
     const data = await fetch('https://fakestoreapi.com/products/categories');
     const categories = await data.json();
+    categories.unshift("all")
     setCategories(categories);
   }
 
@@ -109,7 +110,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/shop">
-            <Shop products={products} addToCart={addToCart} />
+            <Shop products={products} categories={categories} addToCart={addToCart} />
           </Route>
           <Route path="/cart">
             <Cart
