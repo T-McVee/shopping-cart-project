@@ -7,7 +7,7 @@ import { SliderArrow } from './slider/SliderArrow'
 export const Slider = props => {
   const { products, category, addToCart } = props;
 
-  const [cardWidth, setCardWidth] = useState(44);
+  const [cardWidth, setCardWidth] = useState(34);
   const [index, setIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -40,7 +40,7 @@ export const Slider = props => {
 
   const cardStyles = useSpring({
     transform: `translateX(-${index * cardWidth}vw)`,
-    width: `calc(${cardWidth}vw - 2vw)`,
+    width: `calc(${cardWidth}vw - 6vw)`,
     config: {
       mass: 10,
       tension: 380,

@@ -10,8 +10,9 @@
 }
 
 body {
-  background-color: $bg-color;
+  background-color: lighten($color: $bg-color, $amount: 10);
   color: $black;
+  letter-spacing: 2px;
 }
 
 .sticky-nav {

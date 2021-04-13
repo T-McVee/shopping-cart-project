@@ -16,20 +16,21 @@ Link {
   flex-direction: column;
   width: 46%;
   height: 200px;
-  color: #fafafa;
+  color: #9ecad8;
 }
 .splash-text h1,
 .splash-text span {
-  text-shadow: 2px 2px 8px #373d3f;
+  text-shadow: 2px 2px 6px #373d3f;
 }
 .splash-text h1 {
-  font-size: 2.6rem;
+  font-size: 3.2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 .splash-text span {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
 .splash-img {
   position: absolute;
@@ -53,7 +54,6 @@ Link {
   justify-content: center;
   align-items: center;
   height: 8rem;
-  background-color: #fafafa;
   text-align: center;
 }
 
@@ -78,13 +78,15 @@ Link {
   background-color: white;
   width: 13vw;
   height: 120px;
+  padding: 0.5rem;
   text-align: center;
   border-radius: 5px;
-  transition: box-shadow 0.4s;
+  border: 1px solid #393022;
+  transition: color 0.4s;
 }
 .categories .categories-list .category:hover {
   cursor: pointer;
-  box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.032);
+  color: #edbd6c;
 }
 
 .slider-container {
@@ -120,6 +122,7 @@ Link {
   line-height: 60px;
   font-size: 1.4rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
+  transition: transform 0.3s;
 }
 .slider-container .arrow.arrow-left {
   left: 0rem;
@@ -139,10 +142,9 @@ Link {
   flex-direction: row;
   position: relative;
   flex-direction: column;
-  width: 42vw;
   justify-self: center;
   border-radius: 0.5rem;
-  margin: 1rem 2vw 1rem 0;
+  margin: 1rem 6vw 1rem 0;
   transition: right 0.3s;
 }
 .product-card:hover {
@@ -150,6 +152,7 @@ Link {
 }
 .product-card:hover .card-img {
   box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.032);
+  border: 1px solid #393022;
 }
 .product-card:hover .card-img img {
   transform: scale(1.22);
@@ -162,13 +165,13 @@ Link {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 320px;
+  height: 380px;
   background-color: #fff;
   border-radius: 18px;
   transition: box-shadow 0.5s;
 }
 .product-card .card-img img {
-  max-width: 100%;
+  max-width: 72%;
   max-height: 180px;
   transition: transform 0.3s ease-in-out;
 }
@@ -260,8 +263,9 @@ Link {
 }
 
 body {
-  background-color: #fafafa;
-  color: #292217;
+  background-color: #d4e8ee;
+  color: #393022;
+  letter-spacing: 2px;
 }
 
 .sticky-nav {
@@ -291,7 +295,7 @@ body {
   text-decoration: none;
 }
 .sticky-nav .link {
-  color: #292217;
+  color: #393022;
   letter-spacing: 2px;
 }
 .sticky-nav .link:hover {
