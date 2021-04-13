@@ -1,6 +1,7 @@
 @import 'config';
 @import 'home';
 @import 'shop';
+@import 'cart';
 
 * {
   box-sizing: border-box;
@@ -10,6 +11,7 @@
 
 body {
   background-color: $bg-color;
+  color: $black;
 }
 
 .sticky-nav {
@@ -29,12 +31,6 @@ body {
     top: -10vh;
   }
 
-  .logo {
-    .link {
-      text-decoration: none;
-    }
-  }
-
   .nav-links {
     display: flex;
     justify-content: space-between;
@@ -44,10 +40,15 @@ body {
     li {
       list-style: none;
       text-decoration: none;
+    }
+  }
 
-      .link {
-        text-decoration: none;
-      }
+  .link {
+    color: $black;
+    letter-spacing: 2px;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 
@@ -72,7 +73,7 @@ body {
 
 .page {
   width: 100%;
-  padding: 0 7vw;
+  //padding: 0 7vw;
   margin-top: 10vh;
 }
 
@@ -84,6 +85,7 @@ body {
   padding: 1rem 2rem;
   margin: 0.75rem 0;
   box-shadow: $btn-shadow;
+  letter-spacing: 2px;
 
   &:hover {
     cursor: pointer;
@@ -97,10 +99,4 @@ body {
 
 .icon {
   font-size: 1.3rem;
-}
-
-.credit {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
 }

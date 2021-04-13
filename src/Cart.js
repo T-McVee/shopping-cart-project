@@ -10,9 +10,10 @@ export const Cart = props => {
   } = props;
 
   return (
-    <div className="page">
-      <h1>Your cart</h1>
-
+    <div id="cart" className="page page-shop">
+      <header>
+        <h1>Your cart</h1>
+      </header>
       <section className="cart-contentse">
         {cart.map(item => (
           <CartProductCard 

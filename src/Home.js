@@ -15,10 +15,8 @@ export const Home = () => {
           <div className="btn">Consume</div>
           </Link>
         </div>
+        <div className="splash-img"></div>
       </section>
-      <a className="credit link" href="https://github.com/T-McVee/shopping-cart-project" target="blank">
-        <FontAwesomeIcon icon={faGithub} className="icon git"/>
-      </a>
     </div>
   )
 }

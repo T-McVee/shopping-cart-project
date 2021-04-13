@@ -1,12 +1,14 @@
 .page-shop {
   overflow-x: hidden;
   width: 100vw;
+  padding: 0 5rem;
 
   header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 8rem;
+    background-color: $bg-color;
     text-align: center;
   }
 }
@@ -16,6 +18,7 @@
   flex-direction: row;
   width: 100%;
   margin: 1rem 0 5rem;
+  padding: 2rem 0;
 
   .categories-list {
     display: flex;
@@ -43,54 +46,58 @@
   }
 }
 
-.product-slider {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: fit-content;
-}
+.slider-container {
+  margin: 15vh 0;
 
-.slider-title {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-
-  h2 {
-    font-size: 2rem;
+  .product-slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: fit-content;
   }
 
-  .slider-item-count {
-    margin-left: 0.5rem;
-  }
-}
+  .slider-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 
-.arrow {
-  position: absolute;
-  z-index: 10;
-  top: 160px;
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
-  font-size: 1.4rem;
-  box-shadow: $btn-shadow;
+    h2 {
+      font-size: 2rem;
+    }
 
-  //transition: transform 0.3s;
-
-  &.arrow-left {
-    left: 0rem;
+    .slider-item-count {
+      margin-left: 0.5rem;
+    }
   }
 
-  &.arrow-right {
-    left: calc(100vw - 14rem);
-  }
+  .arrow {
+    position: absolute;
+    z-index: 10;
+    top: 160px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.4rem;
+    box-shadow: $btn-shadow;
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+    //transition: transform 0.3s;
+
+    &.arrow-left {
+      left: 0rem;
+    }
+
+    &.arrow-right {
+      left: calc(100vw - 14rem);
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
 }
 
