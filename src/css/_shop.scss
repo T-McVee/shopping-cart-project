@@ -10,38 +10,161 @@
     height: 8rem;
     text-align: center;
   }
-}
 
-.categories {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin: 1rem 0 5rem;
-  padding: 2rem 0;
-
-  .categories-list {
+  .categories {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    margin: 1rem 0 5rem;
+    padding: 2rem 0;
 
-    .category {
+    .categories-list {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+
+      .category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        background-color: rgb(255, 255, 255);
+        width: 13vw;
+        height: 120px;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: $radius-sm;
+        border: 1px solid $black;
+        transition: color 0.4s, border 0.4s;
+
+        &:hover {
+          cursor: pointer;
+          color: $peach-darker-color;
+        }
+      }
+    }
+  }
+
+  .product-card {
+    position: relative;
+    display: flex;
+    right: 0;
+    flex-direction: row;
+    position: relative;
+    flex-direction: column;
+    //width: 42vw;
+    justify-self: center;
+    border-radius: 0.5rem;
+    margin: 1rem 6vw 1rem 0;
+    transition: right 0.3s;
+
+    &:hover {
+      cursor: pointer;
+
+      .card-img {
+        box-shadow: $product-shadow;
+        border: 1px solid $black;
+        img {
+          transform: scale(1.22);
+        }
+      }
+
+      .card-details {
+        .buttons {
+          display: flex;
+        }
+      }
+    }
+
+    .card-img {
       display: flex;
       justify-content: center;
       align-items: center;
-      list-style: none;
-      background-color: rgb(255, 255, 255);
-      width: 13vw;
-      height: 120px;
-      padding: 0.5rem;
-      text-align: center;
-      border-radius: $radius-sm;
-      border: 1px solid $black;
-      transition: color 0.4s;
+      width: 100%;
+      height: 380px;
+      background-color: #fff;
+      border-radius: 18px;
+      transition: box-shadow 0.5s;
 
-      &:hover {
-        cursor: pointer;
-        color: $peach-darker-color;
+      img {
+        max-width: 72%;
+        max-height: 180px;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    .card-details {
+      padding: 0.5rem;
+      height: 120px;
+
+      .product-card-attributes {
+        .product-title {
+          font-size: 1rem;
+        }
+        .product-price {
+          font-size: 0.9rem;
+          margin: 0.5rem 0;
+        }
+      }
+
+      .buttons {
+        position: absolute;
+        top: 85%;
+        right: 1rem;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+        .product-qty {
+          display: flex;
+          flex-direction: row;
+          .qty-btn {
+            width: 22px;
+            height: 2rem;
+            background-color: $white;
+            text-align: center;
+            color: $peach-darker-color;
+            line-height: 2rem;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.left {
+              border-top-left-radius: $radius-sm;
+              border-bottom-left-radius: $radius-sm;
+            }
+
+            &.right {
+              border-top-right-radius: $radius-sm;
+              border-bottom-right-radius: $radius-sm;
+            }
+          }
+
+          .qty-input {
+            border: none;
+            color: $peach-darker-color;
+            text-align: center;
+            width: 50px;
+            height: 2rem;
+          }
+        }
+
+        .add-to-cart-btn {
+          background-color: $peach-color;
+          color: $white;
+          padding: 0.5rem 1rem;
+          border-radius: $radius-sm;
+          box-shadow: $btn-shadow;
+          margin-left: 1rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
   }
@@ -98,129 +221,6 @@
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
-    }
-  }
-}
-
-.product-card {
-  position: relative;
-  display: flex;
-  right: 0;
-  flex-direction: row;
-  position: relative;
-  flex-direction: column;
-  //width: 42vw;
-  justify-self: center;
-  border-radius: 0.5rem;
-  margin: 1rem 6vw 1rem 0;
-  transition: right 0.3s;
-
-  &:hover {
-    cursor: pointer;
-
-    .card-img {
-      box-shadow: $product-shadow;
-      border: 1px solid $black;
-      img {
-        transform: scale(1.22);
-      }
-    }
-
-    .card-details {
-      .buttons {
-        display: flex;
-      }
-    }
-  }
-
-  .card-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 380px;
-    background-color: #fff;
-    border-radius: 18px;
-    transition: box-shadow 0.5s;
-
-    img {
-      max-width: 72%;
-      max-height: 180px;
-      transition: transform 0.3s ease-in-out;
-    }
-  }
-
-  .card-details {
-    padding: 0.5rem;
-    height: 120px;
-
-    .product-card-attributes {
-      .product-title {
-        font-size: 1rem;
-      }
-      .product-price {
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-      }
-    }
-
-    .buttons {
-      position: absolute;
-      top: 85%;
-      right: 1rem;
-      display: none;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-
-      .product-qty {
-        display: flex;
-        flex-direction: row;
-        .qty-btn {
-          width: 22px;
-          height: 2rem;
-          background-color: $white;
-          text-align: center;
-          color: $peach-darker-color;
-          line-height: 2rem;
-
-          &:hover {
-            cursor: pointer;
-          }
-
-          &.left {
-            border-top-left-radius: $radius-sm;
-            border-bottom-left-radius: $radius-sm;
-          }
-
-          &.right {
-            border-top-right-radius: $radius-sm;
-            border-bottom-right-radius: $radius-sm;
-          }
-        }
-
-        .qty-input {
-          border: none;
-          color: $peach-darker-color;
-          text-align: center;
-          width: 50px;
-          height: 2rem;
-        }
-      }
-
-      .add-to-cart-btn {
-        background-color: $peach-color;
-        color: $white;
-        padding: 0.5rem 1rem;
-        border-radius: $radius-sm;
-        box-shadow: $btn-shadow;
-        margin-left: 1rem;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
     }
   }
 }

@@ -10,26 +10,28 @@ export const Cart = props => {
   } = props;
 
   return (
-    <div id="cart" className="page page-shop">
+    <div id="cart" className="page page-cart">
       <header>
         <h1>Your cart</h1>
       </header>
-      <section className="cart-contentse">
-        {cart.map(item => (
-          <CartProductCard 
-            product={item} 
-            removeFromCart={removeFromCart} 
-            updateProductQty={updateProductQty}
-            key={uuid()} 
-          />
-        ))}
-      </section>
+      <main>
+        <section className="cart-contentse">
+          {cart.map(item => (
+            <CartProductCard 
+              product={item} 
+              removeFromCart={removeFromCart} 
+              updateProductQty={updateProductQty}
+              key={uuid()} 
+            />
+          ))}
+        </section>
 
-      <section className="cart-summary">
-        <div className="total">
-          Cart Total: ${cartValue}
-        </div>
-      </section>
+        <section className="cart-summary">
+          <div className="total">
+            Cart Total: ${cartValue}
+          </div>
+        </section>
+      </main>
     </div>
   )
 }

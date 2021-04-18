@@ -9,4 +9,38 @@
     height: 120px;
     text-align: center;
   }
+
+  main {
+    padding-left: 7vw;
+    display: flex;
+    flex-direction: row;
+    .cart-contentse {
+      width: 74%;
+
+      .product-card {
+        flex-direction: row;
+
+        .card-img {
+          width: 260px;
+
+          img {
+            height: 100px;
+            width: 100px;
+          }
+        }
+
+        &:hover {
+          .card-img {
+            img {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
+    .cart-summary {
+      width: 46%;
+    }
+  }
 }

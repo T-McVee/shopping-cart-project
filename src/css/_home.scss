@@ -1,4 +1,10 @@
+.page-home {
+  position: relative;
+}
+
 .splash {
+  position: relative;
+  top: -5vh;
   display: flex;
   align-items: center;
   width: 100%;
@@ -12,7 +18,7 @@
     flex-direction: column;
     width: 46%;
     height: 200px;
-    color: darken($color: $bg-color, $amount: 5);
+    color: $blue-color;
 
     h1,
     span {
