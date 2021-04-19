@@ -103,12 +103,10 @@ function App() {
 
   return (
     <Router>
-      <Switch>
-        <div className="App">
-          <Nav cartCount={cartCount}/>
-          <Route path="/" exact>
-            <Home />
-          </Route>
+      <div className="App">
+        <Nav cartCount={cartCount}/>
+        <Switch>
+          <Route path="/" component={Home} exact />
           <Route path="/shop">
             <Shop products={products} categories={categories} addToCart={addToCart} />
           </Route>
@@ -120,8 +118,8 @@ function App() {
               cartValue={cartValue}
             />
           </Route>
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 }
