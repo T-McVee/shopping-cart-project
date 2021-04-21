@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 import uuid from 'react-uuid';
 import { Slider } from './components/Slider';
-import { TestSpring } from './components/TestSpring';
 
 export const Shop = props => {
   const { products, categories, addToCart } = props;
@@ -26,8 +25,8 @@ export const Shop = props => {
     {all: "All"},
     {electronics: "Electronics"},
     {jewelery: "Jewlery"},
-    {"men clothing": "Men's Clothing"},
-    {"women clothing": "Women's Clothing"},
+    {"men's clothing": "Men's Clothing"},
+    {"women's clothing": "Women's Clothing"},
   ]
   
   const getTitleFromList = (list, key) => {

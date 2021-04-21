@@ -30,6 +30,8 @@ function App() {
     const data = await fetch('https://fakestoreapi.com/products/categories');
     const categories = await data.json();
     categories.unshift("all")
+
+    console.log(categories)
     setCategories(categories);
   }
 
@@ -105,20 +107,20 @@ function App() {
     <Router>
       <div className="App">
         <Nav cartCount={cartCount}/>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/shop">
-            <Shop products={products} categories={categories} addToCart={addToCart} />
-          </Route>
-          <Route path="/cart">
-            <Cart
-              cart={cart} 
-              removeFromCart={removeFromCart} 
-              updateProductQty={updateProductQty}
-              cartValue={cartValue}
-            />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/shop">
+              <Shop products={products} categories={categories} addToCart={addToCart} />
+            </Route>
+            <Route path="/cart">
+              <Cart
+                cart={cart} 
+                removeFromCart={removeFromCart} 
+                updateProductQty={updateProductQty}
+                cartValue={cartValue}
+              />
+            </Route>
+          </Switch>
       </div>
     </Router>
   );
