@@ -84,10 +84,14 @@ body {
   background-color: $peach-color;
   color: #fff;
   border-radius: $radius-sm;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   margin: 0.75rem 0;
   box-shadow: $btn-shadow;
   letter-spacing: 2px;
+
+  &.btn-lg {
+    padding: 1rem 2rem;
+  }
 
   &:hover {
     cursor: pointer;
@@ -101,4 +105,39 @@ body {
 
 .icon {
   font-size: 1.3rem;
+}
+
+.product-qty {
+  display: flex;
+  flex-direction: row;
+  .qty-btn {
+    width: 22px;
+    height: 2rem;
+    background-color: $white;
+    text-align: center;
+    color: $peach-darker-color;
+    line-height: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.left {
+      border-top-left-radius: $radius-sm;
+      border-bottom-left-radius: $radius-sm;
+    }
+
+    &.right {
+      border-top-right-radius: $radius-sm;
+      border-bottom-right-radius: $radius-sm;
+    }
+  }
+
+  .qty-input {
+    border: none;
+    color: $peach-darker-color;
+    text-align: center;
+    width: 50px;
+    height: 2rem;
+  }
 }

@@ -19,7 +19,7 @@ export const CartProductCard = (props) => {
         <div className="buttons">
           <ProductQtyInput qty={product.qty} updateQty={updateProductQty} product={product.product} />
           <div 
-            className="removeFromCart" 
+            className="removeFromCart btn" 
             onClick={() => removeFromCart(product.product)}
           >
             x

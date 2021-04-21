@@ -24,7 +24,7 @@ export const StoreProductCard = (props) => {
             updateQty={setQty}
           />
           <Button 
-            classNameArr={["add-to-cart-btn"]}
+            classNameArr={["add-to-cart btn"]}
             handleClick={addToCart}
             handleClickArgs={[product, qty]}
             annimactionClass="fade"

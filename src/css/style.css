@@ -164,42 +164,8 @@ Link {
   align-items: center;
   width: 100%;
 }
-.page-shop .product-card .card-details .buttons .product-qty {
-  display: flex;
-  flex-direction: row;
-}
-.page-shop .product-card .card-details .buttons .product-qty .qty-btn {
-  width: 22px;
-  height: 2rem;
-  background-color: #fff;
-  text-align: center;
-  color: #edbd6c;
-  line-height: 2rem;
-}
-.page-shop .product-card .card-details .buttons .product-qty .qty-btn:hover {
-  cursor: pointer;
-}
-.page-shop .product-card .card-details .buttons .product-qty .qty-btn.left {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.page-shop .product-card .card-details .buttons .product-qty .qty-btn.right {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.page-shop .product-card .card-details .buttons .product-qty .qty-input {
-  border: none;
-  color: #edbd6c;
-  text-align: center;
-  width: 50px;
-  height: 2rem;
-}
 .page-shop .product-card .card-details .buttons .add-to-cart-btn {
-  background-color: #eec377;
-  color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
   margin-left: 1rem;
 }
 .page-shop .product-card .card-details .buttons .add-to-cart-btn:hover {
@@ -378,10 +344,13 @@ body {
   background-color: #eec377;
   color: #fff;
   border-radius: 5px;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   margin: 0.75rem 0;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
   letter-spacing: 2px;
+}
+.btn.btn-lg {
+  padding: 1rem 2rem;
 }
 .btn:hover {
   cursor: pointer;
@@ -394,6 +363,37 @@ body {
 
 .icon {
   font-size: 1.3rem;
+}
+
+.product-qty {
+  display: flex;
+  flex-direction: row;
+}
+.product-qty .qty-btn {
+  width: 22px;
+  height: 2rem;
+  background-color: #fff;
+  text-align: center;
+  color: #edbd6c;
+  line-height: 2rem;
+}
+.product-qty .qty-btn:hover {
+  cursor: pointer;
+}
+.product-qty .qty-btn.left {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.product-qty .qty-btn.right {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.product-qty .qty-input {
+  border: none;
+  color: #edbd6c;
+  text-align: center;
+  width: 50px;
+  height: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

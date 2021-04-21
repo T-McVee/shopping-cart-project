@@ -12,7 +12,7 @@ export const Home = () => {
           <h1>Catchy headline</h1>
           <span>Intriguing text to spike your interest</span>
           <Link to="/shop" className="link">
-          <div className="btn">Consume</div>
+          <div className="btn btn-lg">Consume</div>
           </Link>
         </div>
         <div className="splash-img"></div>
