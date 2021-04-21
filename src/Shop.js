@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
 import uuid from 'react-uuid';
 import { Slider } from './components/Slider';
 
