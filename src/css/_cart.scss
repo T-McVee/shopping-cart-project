@@ -18,14 +18,20 @@
       width: 74%;
 
       .product-card {
+        display: flex;
         flex-direction: row;
+        width: 100%;
+        height: 120px;
+        margin-bottom: 4rem;
 
         .card-img {
-          width: 260px;
+          display: flex;
+          align-items: center;
+          padding: 0 2rem;
 
           img {
-            height: 100px;
-            width: 100px;
+            //height: 80px;
+            width: 80px;
           }
         }
 
