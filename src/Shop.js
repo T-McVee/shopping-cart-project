@@ -39,7 +39,7 @@ export const Shop = props => {
         <h1>Buy things</h1>
       </header>
       <main>
-        <section className="categories">
+        <section className="categories container">
           <ul className="categories-list">
             {categories.map(cat => (           
               <li 

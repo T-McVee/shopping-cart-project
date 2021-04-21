@@ -14,8 +14,9 @@
     padding-left: 7vw;
     display: flex;
     flex-direction: row;
+    height: 100%;
     .cart-contentse {
-      width: 74%;
+      width: 74vw;
 
       .product-card {
         display: flex;
@@ -46,7 +47,10 @@
     }
 
     .cart-summary {
-      width: 46%;
+      width: 46vw;
+      height: 100vh;
+      background-color: $light-grey-cool;
+      box-shadow: $btn-shadow;
     }
   }
 }

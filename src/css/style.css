@@ -53,7 +53,6 @@ Link {
 .page-shop {
   overflow-x: hidden;
   width: 100vw;
-  padding: 0 7vw;
 }
 .page-shop header {
   display: flex;
@@ -62,12 +61,16 @@ Link {
   height: 8rem;
   text-align: center;
 }
+.page-shop main {
+  display: flex;
+  flex-direction: column;
+}
 .page-shop .categories {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: calc(100vw);
   margin: 1rem 0 5rem;
-  padding: 2rem 0;
+  padding: 2rem 7vw;
 }
 .page-shop .categories .categories-list {
   display: flex;
@@ -156,7 +159,7 @@ Link {
 }
 .page-shop .product-card .card-details .buttons {
   position: absolute;
-  top: 85%;
+  top: 95%;
   right: 1rem;
   display: none;
   flex-direction: row;
@@ -173,7 +176,20 @@ Link {
 }
 
 .slider-container {
-  margin: 15vh 0;
+  background-color: #f3f1ea;
+  padding: 12vh 7vw 6vh;
+}
+.slider-container:nth-of-type(2) {
+  background-color: #eaf1f3;
+}
+.slider-container:nth-of-type(3) {
+  background-color: #f3f1ea;
+}
+.slider-container:nth-of-type(4) {
+  background-color: #eaf1f3;
+}
+.slider-container:nth-of-type(5) {
+  background-color: #f3f1ea;
 }
 .slider-container .product-slider {
   position: relative;
@@ -244,9 +260,10 @@ Link {
   padding-left: 7vw;
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 .page-cart main .cart-contentse {
-  width: 74%;
+  width: 74vw;
 }
 .page-cart main .cart-contentse .product-card {
   display: flex;
@@ -267,7 +284,10 @@ Link {
   transform: scale(1);
 }
 .page-cart main .cart-summary {
-  width: 46%;
+  width: 46vw;
+  height: 100vh;
+  background-color: #c0d4da;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
 }
 
 * {
@@ -376,9 +396,12 @@ body {
   text-align: center;
   color: #edbd6c;
   line-height: 2rem;
+  border: 1px solid #fff;
+  transition: border 0.3s;
 }
 .product-qty .qty-btn:hover {
   cursor: pointer;
+  border: 1px solid #393022;
 }
 .product-qty .qty-btn.left {
   border-top-left-radius: 5px;
@@ -394,6 +417,11 @@ body {
   text-align: center;
   width: 50px;
   height: 2rem;
+}
+
+.container {
+  padding-left: 7vw;
+  padding-right: 7vw;
 }
 
 /*# sourceMappingURL=style.css.map */

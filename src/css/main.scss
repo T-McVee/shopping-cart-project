@@ -117,9 +117,12 @@ body {
     text-align: center;
     color: $peach-darker-color;
     line-height: 2rem;
+    border: 1px solid $white;
+    transition: border 0.3s;
 
     &:hover {
       cursor: pointer;
+      border: 1px solid $black;
     }
 
     &.left {
@@ -140,4 +143,9 @@ body {
     width: 50px;
     height: 2rem;
   }
+}
+
+.container {
+  padding-left: 7vw;
+  padding-right: 7vw;
 }
