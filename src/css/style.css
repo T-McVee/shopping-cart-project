@@ -431,6 +431,14 @@ body {
   height: 2.2rem;
 }
 
+@media (max-width: 768px) {
+  .product-qty .qty-btn {
+    font-size: 0.9rem;
+  }
+  .product-qty .qty-input {
+    width: 30px;
+  }
+}
 .container {
   padding-left: 7vw;
   padding-right: 7vw;

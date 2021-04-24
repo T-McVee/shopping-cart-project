@@ -145,6 +145,18 @@ body {
   }
 }
 
+@media (max-width: $tablet) {
+  .product-qty {
+    .qty-btn {
+      font-size: 0.9rem;
+    }
+
+    .qty-input {
+      width: 30px;
+    }
+  }
+}
+
 .container {
   padding-left: 7vw;
   padding-right: 7vw;
