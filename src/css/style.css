@@ -239,7 +239,7 @@ Link {
   left: 0rem;
 }
 .slider-container .arrow.arrow-right {
-  left: calc(100vw - 13rem);
+  left: calc(100vw - 21vw);
 }
 .slider-container .arrow:hover {
   cursor: pointer;
