@@ -48,9 +48,23 @@
         }
       }
 
+      @media (max-width: $lg-screen) {
+        .category {
+          width: 13vw;
+        }
+      }
+
       @media (max-width: $tablet) {
         .category {
-          width: 15vw;
+          width: 16vw;
+          height: 60px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        .category {
+          width: 18vw;
         }
       }
     }
@@ -69,7 +83,6 @@
     flex-direction: row;
     position: relative;
     flex-direction: column;
-    //width: 42vw;
     justify-self: center;
     border-radius: 0.5rem;
     margin: 1rem 6vw 1rem 0;
@@ -209,7 +222,7 @@
     }
 
     &.arrow-right {
-      left: calc(100vw - 14rem);
+      left: calc(100vw - 13rem);
     }
 
     &:hover {
