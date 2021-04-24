@@ -247,7 +247,7 @@ Link {
 }
 @media (max-width: 545px) {
   .slider-container .arrow.arrow-right {
-    left: calc(100vw - 7vw);
+    left: calc(100vw - 28vw);
   }
 }
 
