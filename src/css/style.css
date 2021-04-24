@@ -167,11 +167,11 @@ Link {
   align-items: center;
   width: 100%;
 }
-.page-shop .product-card .card-details .buttons .add-to-cart-btn {
+.page-shop .product-card .card-details .buttons .add-to-cart {
   padding: 0.5rem 1rem;
   margin-left: 1rem;
 }
-.page-shop .product-card .card-details .buttons .add-to-cart-btn:hover {
+.page-shop .product-card .card-details .buttons .add-to-cart:hover {
   cursor: pointer;
 }
 
@@ -391,7 +391,7 @@ body {
 }
 .product-qty .qty-btn {
   width: 22px;
-  height: 2rem;
+  height: 2.2rem;
   background-color: #fff;
   text-align: center;
   color: #edbd6c;
@@ -416,7 +416,7 @@ body {
   color: #edbd6c;
   text-align: center;
   width: 50px;
-  height: 2rem;
+  height: 2.2rem;
 }
 
 .container {
