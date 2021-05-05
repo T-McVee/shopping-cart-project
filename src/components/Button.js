@@ -7,7 +7,7 @@ export const Button = (props) => {
     handleClick,
     handleClickArgs,
     animationClass,
-    children, 
+    text, 
   } = props;
 
   const [inProp, setInProp] = useState(true);
@@ -18,9 +18,12 @@ export const Button = (props) => {
 
   return (
     <CSSTransition in={inProp} timeout={300} classNames={animationClass}>
-      <div className={[...classNameArr]} onClick={() => handleClick(...handleClickArgs)}>
-        {children}
-      </div>
+      <input 
+        type="submit"
+        value={text} 
+        className={[...classNameArr]} 
+        onClick={() => handleClick(...handleClickArgs)}>
+      </input>
     </CSSTransition>
   )
 }
