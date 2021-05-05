@@ -7,15 +7,17 @@ export const ProductQtyInput = (props) => {
   } = props;
 
   const increaseQty = () => {
-    if (product) return updateQty(product, qty + 1);
-    
-    updateQty(qty + 1);
+    if (qty < 99) {
+      if (product) return updateQty(product, qty + 1);
+      updateQty(qty + 1);
+    }
   }
 
   const decreaseQty = () => {
-    if (product) return updateQty(product, qty -1);
-
-    updateQty(qty - 1);
+    if (qty > 1) {
+      if (product) return updateQty(product, qty -1);
+      updateQty(qty - 1);
+    }
   } 
 
   const handleChange = (e) => {
@@ -36,6 +38,8 @@ export const ProductQtyInput = (props) => {
         className="qty-input" 
         value={qty} 
         onChange={e => handleChange(e)}
+        max="99"
+        min="1"
       />}
       <div className="qty-btn right" onClick={() => increaseQty()}>+</div>
     </div>
