@@ -4,7 +4,6 @@ import { CartProductCard } from './components/productCard/CartProductCard';
 export const Cart = props => {
   const { 
     cart, 
-    cartValue, 
     removeFromCart, 
     updateProductQty, 
   } = props;
@@ -16,7 +15,7 @@ export const Cart = props => {
       </header>
       <main>
         <section className="cart-contentse">
-          {cart.map(item => (
+          {cart.contents.map(item => (
             <CartProductCard 
               product={item} 
               removeFromCart={removeFromCart} 
@@ -28,7 +27,7 @@ export const Cart = props => {
 
         <section className="cart-summary">
           <div className="total">
-            Cart Total: ${cartValue}
+            Cart Total: ${cart.cartTotal()}
           </div>
         </section>
       </main>

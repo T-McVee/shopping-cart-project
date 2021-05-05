@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import uuid from 'react-uuid';
 import { Slider } from './components/Slider';
 
 export const Shop = props => {
@@ -9,7 +8,6 @@ export const Shop = props => {
 
   useEffect(() => {
     setSelectedCategory(categories);
-    
   }, [categories])
 
   const filterCategories = (category) => {
@@ -44,8 +42,8 @@ export const Shop = props => {
             {categories.map(cat => (           
               <li 
                 className="category" 
-                onClick={() => filterCategories(cat)} key={cat}
-                key={uuid()}
+                onClick={() => filterCategories(cat)} 
+                key={cat}
               >
                 <p>{getTitleFromList(categoryTitlesList, cat)}</p>
               </li>
@@ -60,14 +58,14 @@ export const Shop = props => {
                 products={products} 
                 category="All" 
                 addToCart={addToCart}
-                key={uuid()}
+                key={cat}
               /> 
             :
               <Slider 
                 products={products.filter(prod => prod.category === cat)} 
                 category={getTitleFromList(categoryTitlesList, cat)} 
                 addToCart={addToCart}
-                key={uuid()}
+                key={cat}
               />
           ))}
         </section>

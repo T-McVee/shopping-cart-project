@@ -14,6 +14,10 @@ export const Nav = props => {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
+    console.log(cartCount)
+  }, []);
+
+  useEffect(() => {
    window.addEventListener('scroll', handleScroll);
    
    return () => {

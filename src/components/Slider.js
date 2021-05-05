@@ -1,41 +1,16 @@
-import { useState, useEffect } from 'react'
-import { useSpring, animated } from 'react-spring'
-import uuid from 'react-uuid';
+import { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 import { StoreProductCard } from './productCard/StoreProductCard';
-import { SliderArrow } from './slider/SliderArrow'
+import { SliderArrow } from './slider/SliderArrow';
 
 export const Slider = props => {
   const { products, category, addToCart } = props;
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const [cardWidth, setCardWidth] = useState(85);
+  
+  const [cardWidth, setCardWidth] = useState(34);
   const [index, setIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  
-  useEffect(() => {
-    updateUpdateCardWidth(windowWidth)
-    window.addEventListener('resize', handleResize);
 
-    return () => {
-     window.removeEventListener('resize', handleResize);
-    }
-  }, [windowWidth])
-  
-  
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth)
-  }
-  
-  const updateUpdateCardWidth = width => {
-    if (width < 768) {
-      setCardWidth(85);
-    } else {
-      setCardWidth(34);
-    }
-  }
-
- 
   const handleRightArrowClick = () => {
     if (index <= products.length - 3) {
       setIndex(index + 1)
@@ -45,7 +20,7 @@ export const Slider = props => {
       setShowRightArrow(false)
     } else {
       setShowLeftArrow(true)
-    }
+    }   
   }
 
   const handleLeftArrowClick = () => {
@@ -95,7 +70,7 @@ export const Slider = props => {
             {products.map(prod => (
             <AnimatedStoreProductCard
               product={prod} 
-              key={uuid()} 
+              key={prod.id} 
               addToCart={addToCart}
               initialQty={1}
               cardStyles={cardStyles}
@@ -106,3 +81,4 @@ export const Slider = props => {
     </>
   )
 }
+ 

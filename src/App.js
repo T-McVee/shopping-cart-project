@@ -8,9 +8,16 @@ import { Cart } from './Cart';
 
 function App() {
 
-  const [cart, setCart] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
-  const [cartValue, setCartValue] = useState(0);
+  const [cart, setCart] = useState({
+    contents:[], 
+    itemCount: () => cart.contents.reduce((total, item) => {
+      return total + item.qty
+    }, 0),
+    cartTotal: () => cart.contents.reduce((total, item) => {
+      return total + item.value
+    }, 0).toFixed(2),
+  });
+  
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -18,7 +25,6 @@ function App() {
     getProducts();
     getCategories();
   }, []);
-
  
   const getProducts = async () => {
     const data = await fetch('https://fakestoreapi.com/products');
@@ -30,20 +36,20 @@ function App() {
     const data = await fetch('https://fakestoreapi.com/products/categories');
     const categories = await data.json();
     categories.unshift("all")
-
-    console.log(categories)
     setCategories(categories);
   }
 
+  
   const addToCart = (product, qty) => {
-    const newCart = cart
+    const newCart = {}
+    Object.assign(newCart, cart);
     
     // check if product is already in cart
-    const itemIndex = newCart.findIndex(item => item.product.id === product.id)
+    const itemIndex = newCart.contents.findIndex(item => item.product.id === product.id)
     
-    // if no - create object containing props for product and qty
     if (itemIndex < 0) {
-      newCart.push({
+      // if no - create object containing props for product and qty
+      newCart.contents.push({
         product: product,
         qty: qty,
         value: product.price * qty,
@@ -51,62 +57,44 @@ function App() {
 
     } else {
       // if yes - update qty
-      newCart[itemIndex].qty += qty;
-      newCart[itemIndex].value = product.price * newCart[itemIndex].qty;
+      newCart.contents[itemIndex].qty += qty;
+      newCart.contents[itemIndex].value = product.price * newCart.contents[itemIndex].qty;
     }
     
-    setCart(newCart)
-    cartItemCount();
-    cartTotal()
+    setCart(newCart);
   }
 
   const removeFromCart = (product) => {
-    const newCart = cart;
-    const itemToRemove = newCart.findIndex(item => item.product.id === product.id);
-    newCart.splice(itemToRemove, 1)
+    const newCart = {};
+    Object.assign(newCart, cart);
+
+    const itemToRemove = newCart.contents.findIndex(item => item.product.id === product.id);
+    newCart.contents.splice(itemToRemove, 1)
     
     setCart(newCart);
-    cartItemCount();
-    cartTotal();
   }
 
   const updateProductQty = (product, newQty) => {
-    const newCart = cart;
-    const itemIndex = newCart.findIndex(item => item.product.id === product.id)
-    
-    newCart[itemIndex].qty = newQty;
-    newCart[itemIndex].value = product.price * newCart[itemIndex].qty;
+    const newCart = {};
+    Object.assign(newCart, cart)
 
-    if (newCart[itemIndex].qty < 1) {
+    const itemIndex = newCart.contents.findIndex(item => item.product.id === product.id)
+    
+    newCart.contents[itemIndex].qty = newQty;
+    newCart.contents[itemIndex].value = product.price * newCart.contents[itemIndex].qty;
+
+    if (newCart.contents[itemIndex].qty < 1) {
       removeFromCart(product);
     }
 
     setCart(newCart);
-    cartItemCount();
-    cartTotal();
-  }
-  
-  const cartItemCount = () => {
-    const numberOfItems = cart.reduce((total, item) => {
-      return total + item.qty
-    }, 0)
-
-    setCartCount(numberOfItems);
-  }
-  
-  const cartTotal = () => {
-    const cartTotalValue = cart.reduce((total, item) => {
-      return total + item.value
-    }, 0).toFixed(2);
-    
-    setCartValue(cartTotalValue);
   }
 
 
   return (
     <Router>
       <div className="App">
-        <Nav cartCount={cartCount}/>
+        <Nav cartCount={cart.itemCount()} />
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/shop">
@@ -117,7 +105,6 @@ function App() {
                 cart={cart} 
                 removeFromCart={removeFromCart} 
                 updateProductQty={updateProductQty}
-                cartValue={cartValue}
               />
             </Route>
           </Switch>
