@@ -275,6 +275,7 @@ Link {
   height: 100%;
 }
 .page-cart main .cart-contentse {
+  padding-top: 2rem;
   width: 74vw;
 }
 .page-cart main .cart-contentse .product-card {
@@ -292,14 +293,50 @@ Link {
 .page-cart main .cart-contentse .product-card .card-img img {
   width: 80px;
 }
-.page-cart main .cart-contentse .product-card:hover .card-img img {
-  transform: scale(1);
+.page-cart main .cart-contentse .product-card .card-details .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-btn {
+  border: 1px solid #eec377;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-btn.left {
+  border-right: none;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-btn.left:hover {
+  border-right: 1px solid #eec377;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-btn.right {
+  border-left: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-btn.right:hover {
+  border-left: 1px solid #eec377;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .product-qty .qty-input {
+  border-top: 1px solid #eec377;
+  border-bottom: 1px solid #eec377;
+}
+.page-cart main .cart-contentse .product-card .card-details .buttons .removeFromCart {
+  height: 2.2rem;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #eec377;
+  border-left: none;
+  box-shadow: none;
 }
 .page-cart main .cart-summary {
   width: 46vw;
-  height: 100vh;
+  height: calc(100vh - 120px);
   background-color: #c0d4da;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.084);
+  padding: 2rem 4rem;
+}
+.page-cart main .cart-summary .total {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 * {
@@ -375,6 +412,7 @@ body {
   width: fit-content;
   background-color: #eec377;
   color: #fff;
+  border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   margin: 0.75rem 0;
