@@ -1,5 +1,5 @@
-import uuid from 'react-uuid';
-import { CartProductCard } from './components/productCard/CartProductCard';
+import uuid from 'react-uuid'
+import { CartProductCard } from './components/productCard/CartProductCard'
 
 export const Cart = props => {
   const { 
@@ -29,6 +29,7 @@ export const Cart = props => {
           <div className="total">
             Cart Total: ${cart.cartTotal()}
           </div>
+          <div className="btn btn-lg" onClick={() => alert('Oops')}>Checkout</div>
         </section>
       </main>
     </div>

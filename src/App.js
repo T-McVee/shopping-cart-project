@@ -8,6 +8,8 @@ import { Cart } from './Cart';
 
 function App() {
 
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState({
     contents:[], 
     itemCount: () => cart.contents.reduce((total, item) => {
@@ -18,9 +20,7 @@ function App() {
     }, 0).toFixed(2),
   });
   
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-
+  
   useEffect(() => {
     getProducts();
     getCategories();

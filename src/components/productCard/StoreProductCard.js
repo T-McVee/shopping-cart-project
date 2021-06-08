@@ -28,9 +28,8 @@ export const StoreProductCard = (props) => {
             handleClick={addToCart}
             handleClickArgs={[product, qty]}
             annimactionClass="fade"
-          >
-            Gimmie!
-          </Button>
+            text="Gimmie!"
+          />
         </div>
       </div>
     </animated.div>
