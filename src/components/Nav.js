@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import useDebounceEffect from '../helpers/useDebounceEffect'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -15,6 +14,7 @@ export const Nav = props => {
 
   useEffect(() => {
     console.log(cartCount)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

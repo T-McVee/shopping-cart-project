@@ -6,6 +6,7 @@ import { SliderArrow } from './slider/SliderArrow';
 export const Slider = props => {
   const { products, category, addToCart } = props;
   
+  // eslint-disable-next-line no-unused-vars
   const [cardWidth, setCardWidth] = useState(34);
   const [index, setIndex] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
